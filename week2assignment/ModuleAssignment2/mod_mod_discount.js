@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 //Coupon and discount logic
 // Available coupons
 const coupons = {

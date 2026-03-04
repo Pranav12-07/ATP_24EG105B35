@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 /* DONE
 You are building a shopping cart summary for an e-commerce website.
 

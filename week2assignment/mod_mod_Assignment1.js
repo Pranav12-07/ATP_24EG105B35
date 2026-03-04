@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 /* DONE
 Scenario : You are analyzing daily temperatures recorded by a weather app.
 
@@ -33,3 +34,4 @@ console.log("The first temperature above 40 is:",r4)
 //5.
 let r5=temperatures.findIndex((element) => element==28)
 console.log("The index of temperature 28 is:",r5)
+

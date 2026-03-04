@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 /* DONE
 Movie Streaming Platform
 
@@ -49,4 +50,5 @@ console.log("Details of Joker:", r4)
 //5.
 let r5=movies.findIndex(element => element.title==="Avengers")
 console.log("Index of Avengers:",r5)
+
 

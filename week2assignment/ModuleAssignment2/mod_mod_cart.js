@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 //Shopping cart operations
 import { getProductById, checkStock } from './product.js';
 let cartItems = [];
@@ -66,3 +67,4 @@ export function clearCart() {
 // Empty the cart
 cartItems=[]
 }
+

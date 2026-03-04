@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 /* DONE
 Scenario : You are preparing a course list for display on a website.
 

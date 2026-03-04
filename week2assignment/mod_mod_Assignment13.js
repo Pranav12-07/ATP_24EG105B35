@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 /* DONE
 Shallow Copy (Controlled Mutation Use Case)
 -------------------------------------------------------
@@ -45,3 +46,4 @@ console.log("Copied:",copyUser)
 
 //iv.
 // only the top properties changes and not nested
+

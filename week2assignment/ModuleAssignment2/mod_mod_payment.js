@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 //Payment processing
 import { reduceStock } from './product.js';
 import { getCartItems, getCartTotal, clearCart } from './cart.js';

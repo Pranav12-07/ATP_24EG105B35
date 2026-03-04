@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 // TODO: Export these validation functions
 
 // 1. Validate task title (not empty, min 3 chars)

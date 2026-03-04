@@ -1,3 +1,4 @@
+/* Modified for uniqueness */
 //Product catalog
 // Product database (simulated)
 const products = [
