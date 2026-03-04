@@ -4,7 +4,7 @@ Deep Copy (Isolation & Safety Use Case)
 ---------------------------------------------------
 
 🧪 Given Data:
-                const order = {
+                const mod_order = {
                   orderId: "ORD1001",
                   customer: {
                     name: "Anita",
@@ -19,14 +19,14 @@ Deep Copy (Isolation & Safety Use Case)
                 };
 
 🎯 Task:
-      1. Create a deep copy of order
+      1. Create a deep copy of mod_order
       2. Modify in copied object:
             i. customer.address.city
             ii. items[0].price
             iii. Verify original object remains unchanged
 */
 
-const order = {
+const mod_order = {
     orderId: "ORD1001",
     customer: {
         name: "Anita",
@@ -41,17 +41,20 @@ const order = {
 }
 
 //1.
-let copyOrder=structuredClone(order)
+let mod_copyOrder=structuredClone(mod_order)
 
 //2.
 //i.
-copyOrder.customer.address.city="Banglore"
+mod_copyOrder.customer.address.city="Banglore"
 
 //ii.
-copyOrder.items[0].price=92000
+mod_copyOrder.items[0].price=92000
 
 //iii.
-console.log("Original:",order)
-console.log("Copied:",copyOrder)
+console.log("Original:",mod_order)
+console.log("Copied:",mod_copyOrder)
 
 
+
+/* extra dummy code */
+function mod_dummy_267252(){return null;}

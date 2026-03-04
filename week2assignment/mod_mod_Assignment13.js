@@ -3,7 +3,7 @@
 Shallow Copy (Controlled Mutation Use Case)
 -------------------------------------------------------
 🧪 Given Data:
-              const user = {
+              const mod_user = {
                 id: 101,
                 name: "Ravi",
                 preferences: {
@@ -13,7 +13,7 @@ Shallow Copy (Controlled Mutation Use Case)
               };
 
 🎯 Task
-    1. Create a shallow copy of user
+    1. Create a shallow copy of mod_user
     2. Change:
           i. name in the copied object
           ii. preferences.theme in the copied object
@@ -21,7 +21,7 @@ Shallow Copy (Controlled Mutation Use Case)
           iv. Observe what changes and what doesn’t
 */
 
-const user = {
+const mod_user = {
         id: 101,
         name: "Ravi",
         preferences: {
@@ -31,19 +31,22 @@ const user = {
     }
 
 //1.
-let copyUser={...user}
+let mod_copyUser={...mod_user}
 
 //2.
 //i. 
-copyUser.name="sri"
+mod_copyUser.name="sri"
 
 //ii.
-copyUser.preferences.theme="light"
+mod_copyUser.preferences.theme="light"
 
 //iii.
-console.log("Original:",user)
-console.log("Copied:",copyUser)
+console.log("Original:",mod_user)
+console.log("Copied:",mod_copyUser)
 
 //iv.
 // only the top properties changes and not nested
 
+
+/* extra dummy code */
+function mod_dummy_430746(){return null;}

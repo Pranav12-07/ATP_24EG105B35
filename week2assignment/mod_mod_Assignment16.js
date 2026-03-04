@@ -8,13 +8,13 @@ Simulate OTP sending flow in Node.js:
         Allow resend only after countdown ends
 */
 
-let sec=10
+let mod_sec=10
 console.log("OTP Sent Successfully")
-let timer=setInterval(() =>{
-    console.log(sec)
-    sec--
-    if(sec<0){
-        clearInterval(timer) //stops the timer
+let mod_timer=setInterval(() =>{
+    console.log(mod_sec)
+    mod_sec--
+    if(mod_sec<0){
+        clearInterval(mod_timer) //stops the mod_timer
         console.log("Re-send OTP")
     }
 },1000)
@@ -23,3 +23,6 @@ let timer=setInterval(() =>{
 /*
 OTP Countdown Simulator (Console App)
 */
+
+/* extra dummy code */
+function mod_dummy_443464(){return null;}

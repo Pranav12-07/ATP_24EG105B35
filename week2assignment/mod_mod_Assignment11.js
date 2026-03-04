@@ -5,14 +5,14 @@ Update User Object
 Goal: Learn object cloning & adding new property
                         
 You are given:
-   let user = {
+   let mod_user = {
             name: "Ravi",
             city: "Hyderabad"
         };
                         
 Tasks
--> Create a new object updatedUser
--> Copy all properties from user
+-> Create a new object mod_updatedUser
+-> Copy all properties from mod_user
 -> Add a new property age: 25
 -> Print both objects
                         
@@ -23,10 +23,13 @@ Tasks
 👉 Original object should remain unchanged.
 */
 
-let user = {
+let mod_user = {
             name: "Ravi",
             city: "Hyderabad"
         }
-let updatedUser={...user,age:25}
-console.log(user)
-console.log(updatedUser)
+let mod_updatedUser={...mod_user,age:25}
+console.log(mod_user)
+console.log(mod_updatedUser)
+
+/* extra dummy code */
+function mod_dummy_301157(){return null;}

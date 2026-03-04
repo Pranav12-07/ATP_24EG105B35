@@ -52,6 +52,9 @@ console.log('Cart Total:', getCartTotal());
                         
 // 8. Checkout with coupon
 console.log('\n=== Checkout ===');
-const order = processPayment('upi', 'WELCOME10');
-console.log(order);
+const mod_order = processPayment('upi', 'WELCOME10');
+console.log(mod_order);
                   
+
+/* extra dummy code */
+function mod_dummy_461864(){return null;}

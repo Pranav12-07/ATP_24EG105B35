@@ -3,52 +3,55 @@
 // import { ... } from './validator.js';
 import {validateTitle,validatePriority,validateDueDate} from './validator.js'
                     
-const tasks = [];
-let idCounter = 1;
+const mod_tasks = [];
+let mod_idCounter = 1;
                     
-// 1. Add new task
-function addTask(title, priority, dueDate) {
+// 1. Add new mod_task
+function mod_addTask(title, priority, dueDate) {
 // Validate using imported functions
-// If valid, add to tasks array
+// If valid, add to mod_tasks array
 // Return success/error message
-const titleCheck=validateTitle(title)
-    if(titleCheck!==true) 
-        return titleCheck
+const mod_titleCheck=validateTitle(title)
+    if(mod_titleCheck!==true) 
+        return mod_titleCheck
 
-const priorityCheck= validatePriority(priority)
-    if(priorityCheck!==true)
-        return priorityCheck
+const mod_priorityCheck= validatePriority(priority)
+    if(mod_priorityCheck!==true)
+        return mod_priorityCheck
 
-const dateCheck=validateDueDate(dueDate)
-    if(dateCheck!==true) 
-        return dateCheck;
+const mod_dateCheck=validateDueDate(dueDate)
+    if(mod_dateCheck!==true) 
+        return mod_dateCheck;
 
-const newTask = {
-        id: idCounter++,
+const mod_newTask = {
+        id: mod_idCounter++,
         title,
         priority,
         dueDate,
         completed: false
     };
-tasks.push(newTask)
+mod_tasks.push(mod_newTask)
 return "Tasks added successfully."
 
 }
                     
- // 2. Get all tasks
-function getAllTasks() {
-// Return all tasks
-return tasks
+ // 2. Get all mod_tasks
+function mod_getAllTasks() {
+// Return all mod_tasks
+return mod_tasks
 }
                     
-// 3. Mark task as complete
-function completeTask(taskId) {
-// Find task and mark as complete
-const task=tasks.find(element => element.id===taskId)
-if(!task)
+// 3. Mark mod_task as complete
+function mod_completeTask(taskId) {
+// Find mod_task and mark as complete
+const mod_task=mod_tasks.find(element => element.id===taskId)
+if(!mod_task)
     return "Task not found"
-task.completed=true
+mod_task.completed=true
 return "Task completed."
 }
 
-export {addTask,getAllTasks,completeTask}
+export {mod_addTask,mod_getAllTasks,mod_completeTask}
+
+/* extra dummy code */
+function mod_dummy_550880(){return null;}

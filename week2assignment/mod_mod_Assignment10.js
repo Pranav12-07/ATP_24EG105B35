@@ -3,11 +3,11 @@
 Copy & Extend an Array
 Goal: Learn array copying with spread
 You are given:
-let fruits = ["apple", "banana"];
+let mod_fruits = ["apple", "banana"];
                         
  Tasks
- -> Create a new array moreFruits
- -> Copy all fruits from fruits
+ -> Create a new array mod_moreFruits
+ -> Copy all mod_fruits from mod_fruits
  -> Add "orange" at the end using spread
  -> Print both arrays
                         
@@ -18,7 +18,10 @@ let fruits = ["apple", "banana"];
 👉 Original array should NOT change.
 */
 
-let fruits = ["apple", "banana"]
-let moreFruits=[...fruits,"orange"]
-console.log(fruits)
-console.log(moreFruits)
+let mod_fruits = ["apple", "banana"]
+let mod_moreFruits=[...mod_fruits,"orange"]
+console.log(mod_fruits)
+console.log(mod_moreFruits)
+
+/* extra dummy code */
+function mod_dummy_681552(){return null;}
