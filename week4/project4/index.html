@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet" href="/Project4/style.css">
+</head>
+<body>
+    <!-- create table -->
+     <table>
+        <thead>
+            <tr>
+                <th>Number</th> 
+                <th>Full Name</th>
+                <th>Position</th>
+                <th>Sallary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100</td>
+                <td>Ravi</td>
+                <td>Developer</td>
+                <td>20000</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Raju</td>
+                <td>Tester</td>
+                <td>25000</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Rahul</td>
+                <td>HR</td>
+                <td>50000</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Rohit</td>
+                <td>Manager</td>
+                <td>60000</td>
+            </tr>
+        </tbody>
+     </table>
+
+     <!-- table for rowspan -->
+      <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td rowspan="2">ravi</td>
+                <td>Math</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2</td>
+                <td rowspan="2">Rahul</td>
+                <td>Chem</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>Social</td>
+                <td>75</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <!-- table fro colspan-->
+       <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Arun</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Priya</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td colspan="2">Total=400</td>
+            </tr>
+        </tbody>
+       </table>
+       <form>
+        <div>
+            <lable for="name">Name:</lable>
+            <input type="text" id="name" name="name">
+            
+        </div>
+       </form>
+</body>
+</html>
