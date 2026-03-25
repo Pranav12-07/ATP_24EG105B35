@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* LAYOUT TABLE */
+.layout{
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+.layout th, .layout td{
+    border: 1px solid black;
+    padding: 12px;
+}
+/* TITLE */
+.title{
+    text-align: center;
+    margin-top: 40px;
+}
+/* MARKS TABLE */
+.marks{
+    width: 80%;
+    margin: 20px auto 60px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.marks th, .marks td{
+    border: 1px solid black;
+    padding: 10px;
+}
+/* USERS TABLE */
+.users-container{
+    width: 80%;
+    margin: 0 auto 50px;
+    background: #5d59a5;
+    padding: 20px;
+    border-radius: 10px;
+}
+.users-container h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+.users{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+}
+.users th{
+    background: #d9e4e4;
+    padding: 12px;
+    text-align: left;
+}
+.users td{
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+.users tr:nth-child(even){
+    background: #f5fafa;
+}
+.users img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
