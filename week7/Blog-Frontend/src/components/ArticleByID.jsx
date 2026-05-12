@@ -1,6 +1,7 @@
 import { useParams, useLocation, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 import { useAuth } from "../store/authStore";
 import {
   articlePageWrapper,
@@ -35,7 +36,7 @@ function ArticleByID() {
   const { register, handleSubmit } = useForm();
 
   const user = useAuth((state) => state.currentUser);
-  console.log("user ",user)
+  const isAuthenticated = useAuth((state) => state.isAuthenticated);
 
   const [article, setArticle] = useState(location.state || null);
   const [loading, setLoading] = useState(false);
@@ -105,7 +106,7 @@ function ArticleByID() {
 
   //edit article
   const editArticle = (articleObj) => {
-    navigate("/edit-article", { state: articleObj });
+    navigate(`/article/${articleObj._id}/edit`, { state: articleObj });
   };
 
   //post comment by user
@@ -126,6 +127,7 @@ function ArticleByID() {
 
   if (loading) return <p className={loadingClass}>Loading article...</p>;
   if (error) return <p className={errorClass}>{error}</p>;
+  if (!isAuthenticated) return <p className={loadingClass}>Please login to view this article.</p>;
   if (!article) return null;
 
   return (
@@ -137,7 +139,9 @@ function ArticleByID() {
         <h1 className={`${articleMainTitle} uppercase`}>{article.title}</h1>
 
         <div className={articleAuthorRow}>
-          <div className={authorInfo}>✍️ {user?.role}</div>
+          <div className={authorInfo}>
+            ✍️ {article.author?.firstName ? `${article.author.firstName} ${article.author.lastName || ''}` : article.author?.email || 'Unknown author'}
+          </div>
 
           <div>{formatDate(article.createdAt)}</div>
         </div>
@@ -147,7 +151,8 @@ function ArticleByID() {
       <div className={articleContent}>{article.content}</div>
 
       {/* AUTHOR actions */}
-      {user?.role === "AUTHOR" && (
+      {user?.role === "AUTHOR" &&
+        (article.author?._id === user._id || article.author === user._id) && (
         <div className={articleActions}>
           <button className={editBtn} onClick={() => editArticle(article)}>
             Edit
@@ -182,8 +187,8 @@ function ArticleByID() {
         {article.comments?.length === 0 && <p className="text-[#a1a1a6] text-sm text-center">No comments yet</p>}
 
         {article.comments?.map((commentObj, index) => {
-          const name = commentObj.user?.email || "User";
-          const firstLetter = name.charAt(0).toUpperCase();
+          const name =
+            commentObj.user?.firstName || commentObj.user?.email || "User";
 
           return (
             <div key={index} className={commentCard}>

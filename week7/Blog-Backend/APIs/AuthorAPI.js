@@ -8,24 +8,16 @@ export const authorApp=exp.Router()
 
 //write article (protected route)
 authorApp.post('/article',verifyToken("AUTHOR"),async(req,res) => {
-    //get articleObj from client
     const articleObj=req.body
-    //get user from  decoded token
-    //console.log(req.user)
-    let user=req.user
-    //check author -- as we are not currently using client side application we check the validity again
-    let author=await UserModel.findById(articleObj.author)
-    if(author.email!==user.email)
-        return res.status(403).json({message:"You are not authorized"})
-    //if author not found
+    const user=req.user
+    const author=await UserModel.findById(articleObj.author)
     if(!author)
         return res.status(404).json({message:"Invalid author"})
-    //create article by document
+    if(author.email!==user.email)
+        return res.status(403).json({message:"You are not authorized"})
     const articleDocument=new ArticleModel(articleObj)
-    //save
     await articleDocument.save()
-    //send res
-    res.status(200).json({message:"Article published successfully"})
+    res.status(201).json({message:"Article published successfully", payload:articleDocument})
 })
 
 //read own articles

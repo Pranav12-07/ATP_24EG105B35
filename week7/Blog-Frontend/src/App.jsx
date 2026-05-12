@@ -9,6 +9,7 @@ import AuthorArticles from "./components/AuthorArticles";
 import EditArticle from "./components/EditArticle";
 import WriteArticles from "./components/WriteArticles";
 import ArticleByID from "./components/ArticleByID";
+import AdminProfile from "./components/AdminProfile";
 import { Toaster } from "react-hot-toast";
 import Unauthorized from "./components/Unauthorized";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -67,8 +68,20 @@ function App() {
           element: <ArticleByID />,
         },
         {
-          path: "edit-article",
-          element: <EditArticle />,
+          path: "article/:id/edit",
+          element: (
+            <ProtectedRoute allowedRoles={["AUTHOR"]}>
+              <EditArticle />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "admin-profile",
+          element: (
+            <ProtectedRoute allowedRoles={["ADMIN"]}>
+              <AdminProfile />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "unauthorized",

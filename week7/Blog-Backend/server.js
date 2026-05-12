@@ -3,10 +3,12 @@
 import exp from 'express'
 import { config } from 'dotenv'
 import { connect } from 'mongoose'
+import { hash } from 'bcryptjs'
 import { userApp } from './APIs/UserAPI.js'
 import { authorApp } from './APIs/AuthorAPI.js'
 import { adminApp } from './APIs/AdminAPI.js'
 import { commonApp }  from './APIs/CommonAPI.js'
+import { UserModel } from './models/UserModel.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 config()
@@ -32,10 +34,31 @@ app.use("/admin-api",adminApp)
 app.use("/auth",commonApp)
 
 //connect to db
+const seedAdmin = async () => {
+  try {
+    const existingAdmin = await UserModel.findOne({ role: 'ADMIN' });
+    if (!existingAdmin) {
+      const hashedPassword = await hash('admin123', 12);
+      await UserModel.create({
+        firstName: 'Admin',
+        lastName: 'User',
+        email: 'admin@blog.com',
+        password: hashedPassword,
+        role: 'ADMIN',
+        isUserActive: true,
+      });
+      console.log('Default admin created: admin@blog.com / admin123');
+    }
+  } catch (err) {
+    console.log('Failed to seed admin user:', err);
+  }
+};
+
 const connectDB= async() => {
     try{
         await connect(process.env.DB_URL)
         console.log("DB connected")
+        await seedAdmin()
         //assign port
         const port=process.env.PORT
         app.listen(port,() => console.log(`server listening to ${port}...`))

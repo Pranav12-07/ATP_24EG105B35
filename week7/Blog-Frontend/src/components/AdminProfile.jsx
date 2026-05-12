@@ -100,7 +100,7 @@ function AdminProfile() {
               <tbody>
                 {users.map((user) => (
                   <tr key={user._id} className="border-b hover:bg-gray-50 transition">
-                    <td className="px-6 py-4 text-sm text-gray-700">{user.username}</td>
+                    <td className="px-6 py-4 text-sm text-gray-700">{user.firstName || user.email}</td>
                     <td className="px-6 py-4 text-sm text-gray-700">{user.email}</td>
                     <td className="px-6 py-4 text-sm">
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
