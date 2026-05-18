@@ -1,3 +1,96 @@
+# WEEK 3 -- Express Backend with MongoDB
+
+- backend development with Node.js and Express
+   - express server
+   - route handling
+   - middleware
+   - error handling
+- MongoDB connection using Mongoose
+   - schemas
+   - models
+   - validation
+   - CRUD operations
+- authentication
+   - login route
+   - password hashing with bcryptjs
+   - JWT token generation
+   - protected routes using cookies
+
+## Files:
+
+### server.js
+Main backend entry file
+   - creates Express app
+   - connects to MongoDB
+   - mounts user and product routes
+   - adds JSON parser and cookie parser
+   - handles server-side errors
+
+### APIs/UserRoutes.js
+User route handlers
+   - user registration
+   - user login
+   - read all users
+   - read logged-in user by token email
+   - update user by id
+   - delete user by id
+   - add product to cart
+
+### APIs/ProductRoutes.js
+Product route handlers
+   - create product
+   - read all products
+   - read product by product id
+   - update product by product id
+   - delete product by product id
+
+### models/UserModel.js
+User and cart schema
+   - username, password, email and age fields
+   - cart items with product reference and count
+   - validation, unique fields and timestamps
+
+### models/ProductModel.js
+Product schema
+   - productId, productName, price and brand fields
+   - price validation
+   - timestamps
+
+### middlewares/verifyToken.js
+JWT verification middleware
+   - reads token from cookies
+   - verifies token
+   - attaches decoded user data to request
+   - blocks unauthorized requests
+
+### AUTH/UserAuthentication.js
+Authentication notes file
+   - user login function placeholder
+
+### ApiRequests.http
+API testing requests
+   - user CRUD requests
+   - user login request
+   - cart request
+   - product CRUD requests
+
+### VerifyTokenFixNotes.md
+Fix notes for verifyToken import issue
+   - completed checklist
+   - summary of fixed endpoints
+
+### package.json
+Project configuration
+   - module type
+   - dependencies
+   - scripts
+
+### .env
+Environment variables
+   - database connection URL
+
+---
+
 Steps:
 1. Generate package.json
     npm init -y
@@ -45,3 +138,5 @@ Steps:
  -- cross orgin request means when the clint and server application are running i different domains
  -- same orgin request meas the clint also running on the same domain of the server
  --cookies will send along  with the request automatically in same orgin request ,bugt cross orgin request , the token should be explictily includedto the request 
+
+ 

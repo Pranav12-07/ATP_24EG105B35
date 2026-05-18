@@ -1,3 +1,28 @@
+# Users List React App
+
+- React with Vite
+- navbar, users list and footer components
+- counter component using useState
+
+## Main Files:
+
+### Components/UsersList.jsx
+Maps user data to User cards.
+
+### Components/User.jsx
+Displays one user profile card.
+
+### Components/Navbar.jsx
+Navigation bar component.
+
+### Components/Footer.jsx
+Footer component.
+
+### Components/Counter.jsx
+Counter using useState.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

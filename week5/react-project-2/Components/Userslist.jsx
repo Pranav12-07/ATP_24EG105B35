@@ -50,7 +50,7 @@ function UsersList(){
     return (
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
-                users.map( <User key={index} user={userObj} />)
+                users.map((userObj, index) => <User key={index} user={userObj} />)
             }
         </div>
     )

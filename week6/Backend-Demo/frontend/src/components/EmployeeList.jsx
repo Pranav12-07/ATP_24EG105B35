@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect,useState } from "react"
 import { useNavigate } from "react-router"
 
-function ListOfEmps() {
+function EmployeeList() {
 
   const [emps,setEmps]=useState([])
   const [loading,setLoading]=useState(false)
@@ -85,4 +85,4 @@ function ListOfEmps() {
   )          
 }
 
-export default ListOfEmps
+export default EmployeeList

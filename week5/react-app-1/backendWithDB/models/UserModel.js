@@ -160,7 +160,7 @@ export const UserModel = model("User", userSchema);
 
 // Example
 
-// UserAPI.js
+// UserRoutes.js
 // import { UserModel } from "../models/userModel.js";
 
 // Now we can do

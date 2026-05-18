@@ -4,21 +4,27 @@ import exp from 'express'
 import { config } from 'dotenv'
 import { connect } from 'mongoose'
 import { hash } from 'bcryptjs'
-import { userApp } from './APIs/UserAPI.js'
-import { authorApp } from './APIs/AuthorAPI.js'
-import { adminApp } from './APIs/AdminAPI.js'
-import { commonApp }  from './APIs/CommonAPI.js'
+import { userApp } from './APIs/UserRoutes.js'
+import { authorApp } from './APIs/AuthorRoutes.js'
+import { adminApp } from './APIs/AdminRoutes.js'
+import { commonApp }  from './APIs/AuthRoutes.js'
 import { UserModel } from './models/UserModel.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-config()
-//create express app
-const app=exp()
+import path from 'path'
+import { fileURLToPath } from 'url'
 
+config()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+//create express app
+const app = exp()
 
 app.use(cors({
-  origin:['http://localhost:5173'],
-  credentials:true
+  origin: ['http://localhost:5173', 'http://localhost:4000'],
+  credentials: true
 }))
 
 //add cookie parser middleware
@@ -27,78 +33,59 @@ app.use(cookieParser())
 //add body parser
 app.use(exp.json())
 
-//path level middlewares
-app.use("/user-api",userApp)
-app.use("/author-api",authorApp)
-app.use("/admin-api",adminApp)
-app.use("/auth",commonApp)
-
-//connect to db
-const seedAdmin = async () => {
-  try {
-    const existingAdmin = await UserModel.findOne({ role: 'ADMIN' });
-    if (!existingAdmin) {
-      const hashedPassword = await hash('admin123', 12);
-      await UserModel.create({
-        firstName: 'Admin',
-        lastName: 'User',
-        email: 'admin@blog.com',
-        password: hashedPassword,
-        role: 'ADMIN',
-        isUserActive: true,
-      });
-      console.log('Default admin created: admin@blog.com / admin123');
-    }
-  } catch (err) {
-    console.log('Failed to seed admin user:', err);
-  }
-};
-
-const connectDB= async() => {
-    try{
+//connect to database
+const connectDB = async () => {
+    try {
         await connect(process.env.DB_URL)
-        console.log("DB connected")
-        await seedAdmin()
-        //assign port
-        const port=process.env.PORT
-        app.listen(port,() => console.log(`server listening to ${port}...`))
-    }catch(err){
-        console.log("err in db connect",err)
+        console.log("Connected to DB")
+
+        //seed admin user
+        const adminUser = await UserModel.findOne({ role: 'ADMIN' })
+        if (!adminUser) {
+            const hashedPwd = await hash('admin123', 12)
+            await UserModel.create({
+                firstName: 'Admin',
+                lastName: 'User',
+                email: 'admin@gmail.com',
+                password: hashedPwd,
+                role: 'ADMIN',
+                isUserActive: true
+            })
+            console.log("Admin user seeded")
+        }
+    } catch (err) {
+        console.log("Error in connecting to DB", err)
     }
 }
 
 connectDB()
 
+//add API routes
+app.use('/user-api', userApp)
+app.use('/author-api', authorApp)
+app.use('/admin-api', adminApp)
+app.use('/common-api', commonApp)
+app.use('/auth', commonApp)
 
-//to handle invalid path
-app.use((req,res,next) => {
-    console.log(req.url)
-    res.status(404).json({message:`path ${req.url} is invalid`})
+//serve static files from React build
+app.use(exp.static(path.join(__dirname, './dist')))
+
+//catch all middleware to serve index.html for client-side routing
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, './dist/index.html'), (err) => {
+        if (err) {
+            res.status(500).send('Error loading the application')
+        }
+    })
 })
 
-//Error handling middleware
+//error handling middleware
 app.use((err, req, res, next) => {
-  console.log("error is ",err)
-  console.log("Full error:", JSON.stringify(err, null, 2));
-  //ValidationError
-  if (err.name === "ValidationError")
-    return res.status(400).json({ message: "error occurred", error: err.message });
-  //CastError
-  if (err.name === "CastError")
-    return res.status(400).json({ message: "error occurred", error: err.message });
-  const errCode = err.code ?? err.cause?.code ?? err.errorResponse?.code;
-  const keyValue = err.keyValue ?? err.cause?.keyValue ?? err.errorResponse?.keyValue;
+    console.log(err)
+    res.status(500).send({ message: err.message })
+})
 
-  if (errCode === 11000) {
-    const field = Object.keys(keyValue)[0];
-    const value = keyValue[field];
-    return res.status(409).json({
-      message: "error occurred",
-      error: `${field} "${value}" already exists`,
-    });
-  }
-
-  //send server side error
-  res.status(500).json({ message: "error occurred", error: "Server side error" });
-});
+//assign port
+const port = process.env.PORT || 4000
+app.listen(port, () => console.log(`Server running on port ${port}`))
 

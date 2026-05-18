@@ -1,3 +1,32 @@
+# Product Catalog React App
+
+- React with Vite
+- product card component
+- product list rendering with props
+- backendWithDB contains Express, MongoDB, user routes and product routes
+
+## Main Files:
+
+### src/App.jsx
+Renders product data using the Product component.
+
+### src/Components/Product.jsx
+Displays individual product information.
+
+### backendWithDB/server.js
+Express backend entry file.
+
+### backendWithDB/APIs/UserRoutes.js
+User CRUD and login routes.
+
+### backendWithDB/APIs/ProductRoutes.js
+Product CRUD routes.
+
+### backendWithDB/ApiRequests.http
+API request samples.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

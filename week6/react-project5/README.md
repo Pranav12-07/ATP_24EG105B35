@@ -1,3 +1,20 @@
+# User Management React App
+
+- React with Vite
+- fetch users from JSONPlaceholder
+- user counter component
+- add user button increments count
+
+## Main Files:
+
+### src/components/Users.jsx
+Fetches and displays users.
+
+### src/components/UserCounter.jsx
+Displays selected user count.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

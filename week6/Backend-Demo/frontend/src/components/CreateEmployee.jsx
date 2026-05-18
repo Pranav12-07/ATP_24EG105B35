@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 
-function CreateEmp() {
+function CreateEmployee() {
 
   const [loading,setLoading]=useState(false)
   const [error,setError]=useState(null)
@@ -62,4 +62,4 @@ function CreateEmp() {
   )
 }
 
-export default CreateEmp
+export default CreateEmployee

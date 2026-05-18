@@ -1,4 +1,4 @@
-//CommonAPI.js
+//AuthRoutes.js
 
 import exp from 'express'
 import { UserModel } from '../models/UserModel.js'
@@ -6,9 +6,9 @@ import { hash,compare } from 'bcryptjs'
 import { config } from 'dotenv'
 import { verifyToken } from '../middlewares/verifyToken.js'
 import jwt from 'jsonwebtoken'
-import { upload } from '../config/multer.js'
-import { uploadToCloudinary } from '../config/cloudinaryUpload.js'
-import cloudinary from '../config/cloudinary.js'
+import { upload } from '../config/FileUploadConfig.js'
+import { uploadToCloudinary } from '../config/CloudinaryUploadService.js'
+import cloudinary from '../config/CloudinaryConfig.js'
 config()
 const {sign}=jwt
 export const commonApp=exp.Router()

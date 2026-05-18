@@ -1,7 +1,7 @@
 import './App.css'
-import UsersList from '../Components/Footer' 
+import UsersList from '../Components/UsersList' 
 import NavBar from '../Components/Navbar'
-import Footer from '../Components/Userslist' 
+import Footer from '../Components/Footer' 
 
 function App(){
   return(

@@ -1,4 +1,4 @@
-###userReq.http
+### UserApiRequests.http
 
 ### Register User
 POST http://localhost:4000/auth/users

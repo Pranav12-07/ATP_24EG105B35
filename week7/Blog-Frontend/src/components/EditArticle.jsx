@@ -12,7 +12,6 @@ import {
   inputClass,
   submitBtn,
   errorClass,
-  articlePageWrapper,
 } from "../styles/common";
 
 function EditArticle() {

@@ -2,11 +2,10 @@
 //create express app
 import exp from 'express'
 import {connect} from 'mongoose'
-import { userApp } from './APIs/UserAPI.js'
-import { productApp} from './APIs/ProductAPI.js'
+import { userApp } from './APIs/UserRoutes.js'
+import { productApp} from './APIs/ProductRoutes.js'
 import cookieParser from 'cookie-parser'
-const app=exp(), 
- config app=exp()
+const app=exp()
 //start server
 //set a port number
 const port=4000

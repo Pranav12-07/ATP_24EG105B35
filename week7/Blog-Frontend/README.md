@@ -1,3 +1,39 @@
+# Blog Frontend
+
+- React with Vite
+- auth store with Zustand
+- role-based pages
+- articles, comments and profile components
+- protected routes
+
+## Main Files:
+
+### src/App.jsx
+Main frontend routing setup.
+
+### src/store/authStore.js
+Authentication state store.
+
+### src/components/Login.jsx
+Login page.
+
+### src/components/Register.jsx
+Registration page.
+
+### src/components/Articles.jsx
+Article list page.
+
+### src/components/WriteArticles.jsx
+Create article page.
+
+### src/components/EditArticle.jsx
+Edit article page.
+
+### src/components/ProtectedRoute.jsx
+Protects pages by authentication and role.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

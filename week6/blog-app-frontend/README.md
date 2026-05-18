@@ -1,3 +1,33 @@
+# Blog App Frontend
+
+- React with Vite
+- authentication pages
+- user, author and admin profile pages
+- article listing, writing and editing components
+- protected routes
+
+## Main Files:
+
+### src/components/Login.jsx
+Login page.
+
+### src/components/Register.jsx
+Registration page.
+
+### src/components/Articles.jsx
+Article listing page.
+
+### src/components/WriteArticles.jsx
+Create article page.
+
+### src/components/EditArticle.jsx
+Edit article page.
+
+### src/components/ProtectedRoute.jsx
+Route protection component.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

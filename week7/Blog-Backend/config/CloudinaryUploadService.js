@@ -1,4 +1,4 @@
-import cloudinary from "./cloudinary.js";
+import cloudinary from "./CloudinaryConfig.js";
 
 export const uploadToCloudinary = (buffer) => {
   console.log("Upload function called");

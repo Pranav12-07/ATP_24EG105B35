@@ -1,3 +1,26 @@
+# Employee Management Frontend
+
+- React with Vite
+- React Router routes
+- employee create, list and edit pages
+- frontend for the Backend-Demo employee API
+
+## Main Files:
+
+### src/App.jsx
+Defines frontend routes.
+
+### src/components/CreateEmployee.jsx
+Create employee form.
+
+### src/components/EmployeeList.jsx
+Employee listing page.
+
+### src/components/EditEmployee.jsx
+Edit employee page.
+
+---
+
 # 30-03-26
 - every api req does not need a useeffect hook
 - cors --> cross origin resource sharing

@@ -1,8 +1,8 @@
 import { createBrowserRouter,RouterProvider } from "react-router";
 import RootLayout from "./components/RootLayout";
 import Home from "./components/Home";
-import CreateEmp from "./components/CreateEmp";
-import ListOfEmps from "./components/ListOfEmps";
+import CreateEmployee from "./components/CreateEmployee";
+import EmployeeList from "./components/EmployeeList";
 import Employee from "./components/Employee"
 import EditEmployee from "./components/EditEmployee"
 
@@ -15,8 +15,8 @@ function App() {
       element:<RootLayout />,
       children:[
         { path:'', element:<Home /> },
-        { path:'create-emp', element:<CreateEmp /> },
-        { path:'listofemps', element:<ListOfEmps /> },
+        { path:'create-employee', element:<CreateEmployee /> },
+        { path:'employees', element:<EmployeeList /> },
         { path:'employee',element:<Employee />},
         { path:'editemployee',element:<EditEmployee />}
       ]

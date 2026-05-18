@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Users from "./components/Users";
-import Usercount from "./components/UserCount";
+import UserCounter from "./components/UserCounter";
 
 function App() {
   const [count,setCount]=useState(0)
@@ -15,7 +15,7 @@ function App() {
         User Management
       </h1>
 
-      <Usercount count={count} />
+      <UserCounter count={count} />
 
       <Users onAddUser={handleAddUser} />
     </div>

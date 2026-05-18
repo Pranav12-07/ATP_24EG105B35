@@ -1,4 +1,4 @@
-//AdminAPI.js
+//AdminRoutes.js
 
 import exp from 'express'
 import { UserModel } from '../models/UserModel.js'

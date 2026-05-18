@@ -42,6 +42,7 @@ function WriteArticles() {
       //navigate to AuthorArticles
       if (res.status === 201) {
         toast.success("Article published successfully")
+        reset();
         navigate("../articles");
         // navigate("./author-profile/articles");
       }

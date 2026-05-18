@@ -2,11 +2,11 @@ import { useContext } from "react"
 import { counterContextObj } from "../contexts/ContextProvider"
 
 
-function EditCounter2() {
+function CounterPanelTwo() {
     const {counter,increment,decrement}=useContext(counterContextObj)
   return (
     <div className="bg-sky-300 p-4 rounded">
-        <h1 className="text-xl mb-2">EditCounter2</h1>
+        <h1 className="text-xl mb-2">Counter Panel Two</h1>
         <p className="mb-2">Count: {counter}</p>
         <button className="bg-red-500 text-white px-4 py-2 m-2 rounded"  onClick={increment}>+</button>
         <button className="bg-red-500 text-white px-4 py-2 m-2 rounded"  onClick={decrement}>-</button>
@@ -14,4 +14,4 @@ function EditCounter2() {
   )
 }
 
-export default EditCounter2
+export default CounterPanelTwo

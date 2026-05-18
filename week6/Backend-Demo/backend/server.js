@@ -1,7 +1,7 @@
 //create express app
 import exp from 'express'
 import {connect} from 'mongoose'
-import { empApp } from './APIs/EmployeeAPI.js'
+import { empApp } from './APIs/EmployeeRoutes.js'
 import { config } from 'dotenv'
 import cors from 'cors'
 const app=exp()

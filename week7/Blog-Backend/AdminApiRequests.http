@@ -1,4 +1,4 @@
-### adminReq.http
+### AdminApiRequests.http
 
 ### Admin login -- data seeding
 POST http://localhost:4000/auth/login/users

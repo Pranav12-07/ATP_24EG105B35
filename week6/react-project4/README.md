@@ -1,3 +1,29 @@
+# Context API Counter App
+
+- React with Vite
+- Context API
+- shared counter state
+- multiple counter panels using the same context
+
+## Main Files:
+
+### src/contexts/ContextProvider.jsx
+Creates and provides counter state.
+
+### src/components/CounterPanelOne.jsx
+Counter panel using shared context.
+
+### src/components/CounterPanelTwo.jsx
+Counter panel using shared context.
+
+### src/components/CounterPanelThree.jsx
+Counter panel using shared context.
+
+### src/components/CounterPanelFour.jsx
+Counter panel using shared context.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

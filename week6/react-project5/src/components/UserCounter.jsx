@@ -1,6 +1,6 @@
 import React from "react";
 
-function UserCount({count}) {
+function UserCounter({count}) {
   return (
     <div className="text-center mb-6">
       <h2 className="text-xl">
@@ -10,4 +10,4 @@ function UserCount({count}) {
   )
 }
 
-export default UserCount;
+export default UserCounter;

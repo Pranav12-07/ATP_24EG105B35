@@ -62,7 +62,7 @@ function ArticleByID() {
     };
 
     getArticle();
-  }, [id]);
+  }, [article, id]);
 
   const formatDate = (date) => {
     return new Date(date).toLocaleString("en-IN", {
@@ -189,6 +189,7 @@ function ArticleByID() {
         {article.comments?.map((commentObj, index) => {
           const name =
             commentObj.user?.firstName || commentObj.user?.email || "User";
+          const firstLetter = name.charAt(0).toUpperCase();
 
           return (
             <div key={index} className={commentCard}>

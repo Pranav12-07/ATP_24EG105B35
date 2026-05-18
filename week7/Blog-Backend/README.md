@@ -1,3 +1,46 @@
+# Blog Backend
+
+- Express backend
+- MongoDB with Mongoose models
+- user, author and admin routes
+- JWT authentication middleware
+- Cloudinary image upload
+- API request files for testing
+
+## Main Files:
+
+### server.js
+Creates the backend server, connects to DB, seeds admin and mounts routes.
+
+### APIs/AuthRoutes.js
+Register, login, logout and check-auth routes.
+
+### APIs/UserRoutes.js
+User-facing article and comment routes.
+
+### APIs/AuthorRoutes.js
+Author article CRUD routes.
+
+### APIs/AdminRoutes.js
+Admin user management routes.
+
+### models/UserModel.js
+User schema and model.
+
+### models/ArticleModel.js
+Article schema and model.
+
+### UserApiRequests.http
+User API request samples.
+
+### AuthorApiRequests.http
+Author API request samples.
+
+### AdminApiRequests.http
+Admin API request samples.
+
+---
+
 # 12-03-26
 1. generate package.json
 2. create .env file

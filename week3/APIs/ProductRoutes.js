@@ -1,6 +1,7 @@
 //create mini express application (separate route for products)
 import exp from 'express'
 import { ProductModel } from '../models/ProductModel.js'
+import { verifyToken } from '../middlewares/verifyToken.js'
 export const productApp = exp.Router()
 // Define product REST API routes
 

@@ -1,3 +1,6 @@
+//operations with emp details
+
+
 const employees = [
   {
     eno: 101,

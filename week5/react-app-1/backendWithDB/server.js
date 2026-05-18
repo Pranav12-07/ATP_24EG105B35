@@ -1,9 +1,9 @@
 import exp from "express";
 import { connect } from "mongoose";
-import { userApp } from "./APIs/UserAPI.js";
-import { productApp } from "./APIs/productAPIs.js";
+import { userApp } from "./APIs/UserRoutes.js";
+import { productApp } from "./APIs/ProductRoutes.js";
 // //import cookieParser from "cookie-parser";
-// const app = exp();
+const app = exp();
 // app.use(exp.json());
 // // app.use(cookieParser());
 
@@ -48,7 +48,7 @@ app.use((err,req,res,next)=>{
         return res.status(400).json({message:"Error occured",error:err.message});
     }
     //send server side errors
-    res.status(500).json({message:"error occured",error:server.message})
+    res.status(500).json({message:"error occured",error:"Server side error"})
 })
 
 
