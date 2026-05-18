@@ -74,7 +74,7 @@ function UserProfile() {
       {error && <p className={errorClass}>{error}</p>}
 
       {/* PROFILE HEADER */}
-      <div className="bg-white border border-[#e8e8ed] rounded-3xl p-6 mb-8 shadow-sm flex items-center justify-between">
+      <div className="bg-white border border-[#dbeafe] rounded-3xl p-6 mb-8 shadow-sm flex items-center justify-between">
         {/* LEFT */}
         <div className="flex items-center gap-4">
           {/* Avatar */}
@@ -85,21 +85,21 @@ function UserProfile() {
               alt="profile"
             />
           ) : (
-            <div className="w-16 h-16 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center text-xl font-semibold">
+            <div className="w-16 h-16 rounded-full bg-[#c7d2fe]/10 text-[#4338ca] flex items-center justify-center text-xl font-semibold">
               {currentUser?.firstName?.charAt(0).toUpperCase()}
             </div>
           )}
 
           {/* Name */}
           <div>
-            <p className="text-sm text-[#6e6e73]">Welcome back</p>
-            <h2 className="text-xl font-semibold text-[#1d1d1f]">{currentUser?.firstName}</h2>
+            <p className="text-sm text-[#6b7280]">Welcome back</p>
+            <h2 className="text-xl font-semibold text-[#1f2937]">{currentUser?.firstName}</h2>
           </div>
         </div>
 
         {/* LOGOUT */}
         <button
-          className="bg-[#ff3b30] text-white text-sm px-5 py-2 rounded-full hover:bg-[#d62c23] transition"
+          className="bg-[#ef4444] text-white text-sm px-5 py-2 rounded-full hover:bg-[#dc2626] transition"
           onClick={onLogout}
         >
           Logout
@@ -108,11 +108,11 @@ function UserProfile() {
 
       {/* ARTICLES SECTION */}
       <div className="mt-4">
-        <h3 className="text-lg font-semibold text-[#1d1d1f] mb-4">Latest Articles</h3>
+        <h3 className="text-lg font-semibold text-[#1f2937] mb-4">Latest Articles</h3>
 
         {/* EMPTY STATE */}
         {articles.length === 0 ? (
-          <p className="text-[#a1a1a6] text-sm text-center py-10">No articles available yet</p>
+          <p className="text-[#6b7280] text-sm text-center py-10">No articles available yet</p>
         ) : (
           <div className={articleGrid}>
             {articles.map((articleObj) => (

@@ -221,7 +221,7 @@ function Register() {
         {/* FOOTER */}
         <p className={`${mutedText} text-center mt-5`}>
           Already have an account?{" "}
-          <NavLink to="/login" className="text-[#0066cc] font-medium">
+          <NavLink to="/login" className="text-[#4338ca] font-medium">
             Sign in
           </NavLink>
         </p>

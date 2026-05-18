@@ -179,7 +179,7 @@ function ArticleByID() {
       {/* comments */}
       {/* Comments */}
       <div className={commentsWrapper}>
-        {article.comments?.length === 0 && <p className="text-[#a1a1a6] text-sm text-center">No comments yet</p>}
+        {article.comments?.length === 0 && <p className="text-[#6b7280] text-sm text-center">No comments yet</p>}
 
         {article.comments?.map((commentObj, index) => {
           const name = commentObj.user?.email || "User";
