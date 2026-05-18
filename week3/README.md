@@ -1,5 +1,8 @@
 # WEEK 3 -- Express Backend with MongoDB
 
+GitHub link: https://github.com/Pranav12-07/ATP_24EG105B35/tree/main/week3
+
+
 - backend development with Node.js and Express
    - express server
    - route handling
@@ -85,9 +88,11 @@ Project configuration
    - dependencies
    - scripts
 
-### .env
-Environment variables
+### .env.example
+Environment variables template
    - database connection URL
+
+(Actual .env is ignored via `.gitignore` )
 
 ---
 
