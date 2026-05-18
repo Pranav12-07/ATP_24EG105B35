@@ -36,11 +36,14 @@ app.use("/auth",commonApp)
 //connect to db
 const connectDB= async() => {
     try{
-        await connect(process.env.DB_URL)
+        const dbUrl = process.env.DB_URL;
+        if (!dbUrl) throw new Error("DB_URL environment variable is required");
+
+        await connect(dbUrl);
         console.log("DB connected")
-        //assign port
-        const port=process.env.PORT
-        app.listen(port,() => console.log(`server listening to ${port}...`))
+
+        const port = process.env.PORT || 4000;
+        app.listen(port, () => console.log(`server listening to ${port}...`));
     }catch(err){
         console.log("err in db connect",err)
     }
