@@ -1,0 +1,14 @@
+# ignore node modules and local environment files
+node_modules/
+**/node_modules/
+*.log
+.DS_Store
+.env
+*.env
+postgres-data/
+redis-data/
+es-data/
+dist/
+build/
+.vscode/
+.idea/
