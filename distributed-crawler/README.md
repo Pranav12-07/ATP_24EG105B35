@@ -27,7 +27,7 @@ This project implements a distributed web crawler with worker task distribution,
    cd d:/single/distributed-crawler
    docker compose up --build
    ```
-
+   Then visit the frontend at `http://localhost:3000`.
 2. Open the API docs
 
    - Crawl submit: `http://localhost:4000/api/crawl`

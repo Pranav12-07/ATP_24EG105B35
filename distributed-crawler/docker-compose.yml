@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   rabbitmq:
     image: rabbitmq:3.12-management
@@ -70,6 +69,13 @@ services:
       REDIS_URL: redis://redis:6379
       POSTGRES_URL: postgres://crawler:crawlerpass@postgres:5432/crawler
       ELASTIC_URL: http://elasticsearch:9200
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - api
+    ports:
+      - '3000:80'
 
 volumes:
   redis-data:
