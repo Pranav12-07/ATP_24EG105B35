@@ -1,0 +1,80 @@
+### Read all users(req to protecyed route)
+GET http://localhost:4000/user-api/users
+
+
+### Read a user by email
+GET http://localhost:4000/user-api/user
+
+### Create new user
+
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"srii",
+    "password":"sri",
+    "email":"sri@email.com",
+    "age":19
+}
+
+### Update a user
+PUT http://localhost:4000/user-api/users/69b25389ef5338f398b85a98
+Content-Type: application/json
+
+{
+    "username":"hitha",
+    "password":"hitha",
+    "email":"hitha@email.com",
+    "age":19
+}
+
+### delete a user by id
+DELETE http://localhost:4000/user-api/users/69ab9c95a4febff7673e46d0
+
+### user login
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+
+{
+    "email":"ravi@email.com",
+    "password":"ravi"
+}
+
+### add product to user cart
+PUT http://localhost:4000/user-api/cart/product-id/69aba14db9680bbea851312a
+
+
+
+### Read all products
+GET http://localhost:4000/product-api/products
+
+### Read a product by productid
+GET http://localhost:4000/product-api/products
+
+### Create new user
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":1,
+    "productName":"Laptop",
+    "price":49000,
+    "brand":"Mac"
+}
+
+### Update a user
+PUT http://localhost:4000/product-api/products/69aba14db9680bbea851312a
+Content-Type: application/json
+
+{
+    "productId":1,
+    "productName":"MacBook",
+    "price":45000,
+    "brand":"MacOS"
+}
+
+### delete a user by id
+DELETE http://localhost:4000/product-api/products/69ab9d16a4febff7673e46d6
+
+
+
